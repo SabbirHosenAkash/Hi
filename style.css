@@ -1,0 +1,148 @@
+/* --- Variables & Core --- */
+:root {
+    --primary: #00ff88; /* Neon Green */
+    --accent: #ff0000;  /* Red */
+    --bg-dark: #0a0a0a;
+    --text: #ffffff;
+    --glass: rgba(255, 255, 255, 0.05);
+}
+
+* {
+    margin: 0; padding: 0; box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text);
+    overflow-x: hidden;
+}
+
+/* --- Particle Background --- */
+#particles-js {
+    position: fixed; width: 100%; height: 100%; z-index: -1;
+}
+
+/* --- Navigation (PC vs Mobile) --- */
+.navbar {
+    position: fixed; width: 100%; top: 0; z-index: 1000;
+    background: rgba(10, 10, 10, 0.95);
+    border-bottom: 1px solid var(--primary);
+    padding: 15px 10%;
+    display: flex; justify-content: center;
+}
+
+.navbar ul { display: flex; list-style: none; }
+.navbar ul li { margin: 0 15px; }
+.navbar ul li a {
+    text-decoration: none; color: white; font-weight: 500;
+    transition: 0.3s; text-transform: uppercase; font-size: 14px;
+}
+.navbar ul li a:hover { color: var(--primary); text-shadow: 0 0 10px var(--primary); }
+
+.menu-btn { display: none; position: fixed; top: 20px; right: 20px; z-index: 1001; font-size: 24px; color: var(--primary); cursor: pointer; }
+
+/* --- Hero Section (PC Layout) --- */
+.hero-section {
+    display: flex; height: 100vh; align-items: center; justify-content: space-between;
+    padding: 0 10%; gap: 50px;
+}
+
+.hero-left { flex: 1; text-align: center; }
+.hero-right { flex: 1.2; text-align: left; }
+
+.profile-image-container {
+    width: 250px; height: 250px; margin: 0 auto 20px;
+    border-radius: 50%; padding: 10px;
+    border: 8px solid transparent;
+    animation: rotateRing 3s linear infinite;
+}
+
+.main-profile { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; border: 4px solid var(--bg-dark); }
+
+@keyframes rotateRing {
+    0% { border-color: var(--accent) var(--primary); }
+    50% { border-color: var(--primary) var(--accent); }
+    100% { border-color: var(--accent) var(--primary); }
+}
+
+.name-text { font-size: 3rem; margin: 10px 0; }
+.bio-text { font-size: 1.1rem; line-height: 1.8; margin-bottom: 25px; }
+
+/* --- Buttons --- */
+.download-btn, .book-btn, .visit-btn, .send-btn {
+    padding: 12px 30px; border-radius: 50px; border: none;
+    background: var(--primary); color: #000; font-weight: 700;
+    cursor: pointer; transition: 0.3s; text-decoration: none; display: inline-block;
+}
+.download-btn:hover, .send-btn:hover { box-shadow: 0 0 20px var(--primary); transform: scale(1.05); }
+
+/* --- Social Icons --- */
+.social-icons { margin-top: 20px; }
+.social-icons a { color: var(--primary); font-size: 24px; margin-right: 20px; transition: 0.3s; }
+.social-icons a:hover { transform: translateY(-5px); filter: brightness(1.2); }
+
+/* --- About Image --- */
+.about-pic-section { text-align: center; padding: 50px 0; }
+.about-image { width: 80%; max-width: 500px; border-radius: 20px; border: 2px solid var(--primary); }
+
+/* --- Section Title Half Color --- */
+.section-title { font-size: 2.5rem; text-align: center; margin-bottom: 50px; }
+.section-title span { color: var(--primary); }
+
+/* --- Grid Boxes (Services, Books, Orgs) --- */
+.services-grid, .books-grid, .org-container {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;
+}
+
+.service-box, .book-box, .org-box {
+    background: var(--glass); padding: 30px; border-radius: 20px;
+    border: 1px solid var(--border); transition: 0.4s; text-align: center;
+    backdrop-filter: blur(10px);
+}
+.service-box:hover, .book-box:hover, .org-box:hover {
+    border-color: var(--primary); box-shadow: 0 0 20px rgba(0, 255, 136, 0.2);
+    transform: translateY(-10px);
+}
+
+.book-box img { width: 100%; border-radius: 10px; margin-bottom: 15px; }
+
+/* --- Skills Section --- */
+.skills-container { max-width: 800px; margin: 0 auto; }
+.skill-item { margin-bottom: 20px; }
+.bar { background: rgba(255,255,255,0.1); height: 10px; border-radius: 10px; margin-top: 5px; position: relative; }
+.bar span { background: var(--primary); height: 100%; position: absolute; border-radius: 10px; box-shadow: 0 0 10px var(--primary); }
+
+/* --- Contact Message Box Design --- */
+.contact-wrapper {
+    display: flex; flex-wrap: wrap; gap: 40px; background: var(--glass);
+    padding: 50px; border-radius: 30px; border: 1px solid var(--primary);
+}
+#contact-form { flex: 1.5; display: flex; flex-direction: column; gap: 15px; }
+#contact-form input, #contact-form textarea {
+    padding: 15px; border-radius: 10px; border: 1px solid var(--primary);
+    background: rgba(255,255,255,0.05); color: white;
+}
+.contact-details { flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 20px; font-size: 1.1rem; }
+.contact-details i { color: var(--primary); margin-right: 10px; }
+
+/* --- AI Chatbot Floating --- */
+#ai-chat-wrapper { position: fixed; bottom: 30px; right: 30px; z-index: 2000; }
+#chat-trigger { width: 60px; height: 60px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 25px; color: #000; cursor: pointer; }
+#chat-window { width: 320px; height: 450px; background: #111; border: 1px solid var(--primary); position: absolute; bottom: 80px; right: 0; border-radius: 15px; display: flex; flex-direction: column; overflow: hidden; }
+.chat-hidden { display: none; }
+.chat-header { background: var(--primary); color: #000; padding: 15px; font-weight: bold; }
+#chat-logs { flex: 1; padding: 15px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; }
+.chat-input-area { display: flex; padding: 10px; background: #222; }
+.chat-input-area input { flex: 1; background: transparent; border: none; color: white; padding: 5px; outline: none; }
+.chat-input-area button { background: var(--primary); border: none; padding: 5px 15px; border-radius: 5px; cursor: pointer; }
+
+/* --- Responsive --- */
+@media (max-width: 992px) {
+    .navbar { display: none; }
+    .navbar.active { display: flex; flex-direction: column; top: 0; left: 0; width: 100%; height: 100vh; align-items: center; justify-content: center; }
+    .menu-btn { display: block; }
+    .hero-section { flex-direction: column; text-align: center; padding-top: 100px; height: auto; }
+    .hero-right { text-align: center; }
+}
