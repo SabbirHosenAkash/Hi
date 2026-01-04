@@ -1,18 +1,10 @@
-// --- 1. Typing Effect (Fixed Logic) ---
-const textArray = [
-    "Bangladeshi Musician", 
-    "Creative Writer", 
-    "Web Developer", 
-    "SEO Expert"
-];
+// --- 1. Typing Effect Logic ---
+const textArray = ["Bangladeshi Musician", "Creative Writer", "Web Developer", "SEO Expert"];
 let textIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
-const typingDelay = 150;
-const erasingDelay = 80;
-const nextTextDelay = 2000;
 
-function type() {
+function typeEffect() {
     const typingElement = document.getElementById("typing-effect");
     if (!typingElement) return;
 
@@ -26,18 +18,18 @@ function type() {
         charIndex++;
     }
 
-    let typeSpeed = isDeleting ? erasingDelay : typingDelay;
+    let typeSpeed = isDeleting ? 70 : 150;
 
     if (!isDeleting && charIndex === currentText.length) {
         isDeleting = true;
-        typeSpeed = nextTextDelay;
+        typeSpeed = 2000; // শেষের দিকে একটু বিরতি
     } else if (isDeleting && charIndex === 0) {
         isDeleting = false;
         textIndex = (textIndex + 1) % textArray.length;
         typeSpeed = 500;
     }
 
-    setTimeout(type, typeSpeed);
+    setTimeout(typeEffect, typeSpeed);
 }
 
 // --- 2. Mobile Menu Toggle ---
@@ -46,32 +38,60 @@ function toggleMenu() {
     navLinks.classList.toggle('active');
 }
 
-// Close menu when a link is clicked (Mobile)
+// লিঙ্ক ক্লিক করলে মেনু বন্ধ হয়ে যাবে (মোবাইলের জন্য)
 document.querySelectorAll('#nav-links a').forEach(link => {
     link.addEventListener('click', () => {
         document.getElementById('nav-links').classList.remove('active');
     });
 });
 
-// --- 3. Box Click Highlight Effect ---
+// --- 3. Interactive Box Click Effect ---
 function highlightBox(element) {
-    // Remove highlight from all other boxes first
     document.querySelectorAll('.interactive-box').forEach(box => {
         box.classList.remove('active-click');
     });
-    // Add highlight to the clicked box
     element.classList.add('active-click');
 }
 
-// --- 4. Particles Background ---
+// --- 4. Scroll Reveal & Skill Bar Animation ---
+const revealElements = document.querySelectorAll('.reveal');
+const skillFills = document.querySelectorAll('.fill');
+
+const observerOptions = {
+    threshold: 0.2
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            // সেকশন অ্যানিমেশন
+            entry.target.classList.add('active');
+            
+            // যদি স্কিল সেকশন হয়, তবে বারগুলো পূর্ণ হবে
+            if (entry.target.id === 'skills') {
+                skillFills.forEach(fill => {
+                    const targetWidth = fill.style.width;
+                    fill.style.width = '0%'; // প্রথমে ০ করে
+                    setTimeout(() => {
+                        fill.style.width = targetWidth; // তারপর টার্গেট উইডথ এ যাবে
+                    }, 100);
+                });
+            }
+        }
+    });
+}, observerOptions);
+
+revealElements.forEach(el => observer.observe(el));
+
+// --- 5. Particles Setup ---
 if (typeof particlesJS !== 'undefined') {
     particlesJS("particles-js", {
         "particles": {
-            "number": { "value": 60, "density": { "enable": true, "value_area": 800 } },
+            "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
             "color": { "value": "#00ff88" },
             "shape": { "type": "circle" },
-            "opacity": { "value": 0.4 },
-            "size": { "value": 3, "random": true },
+            "opacity": { "value": 0.5 },
+            "size": { "value": 3 },
             "line_linked": { "enable": true, "distance": 150, "color": "#00ff88", "opacity": 0.2, "width": 1 },
             "move": { "enable": true, "speed": 2 }
         },
@@ -81,18 +101,7 @@ if (typeof particlesJS !== 'undefined') {
     });
 }
 
-// --- 5. Scroll Reveal Animation ---
-const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('active');
-        }
-    });
-}, { threshold: 0.1 });
-
-document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-
-// --- Start Animation on Load ---
+// সব লোড হওয়ার পর টাইপিং শুরু হবে
 document.addEventListener("DOMContentLoaded", () => {
-    setTimeout(type, 1000);
+    setTimeout(typeEffect, 1000);
 });
