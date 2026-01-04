@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sabbir Hosen Akash | Writarion</title>
+    <title>Sabbir Hosen Akash - Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -11,9 +11,9 @@
 
     <div id="particles-js"></div>
 
-    <div class="menu-btn" onclick="toggleMenu()">☰</div>
-    <nav class="navbar" id="navbar">
-        <ul>
+    <nav class="navbar">
+        <div class="menu-btn" onclick="toggleMenu()">☰</div>
+        <ul id="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#skills">Skills</a></li>
@@ -25,177 +25,157 @@
     </nav>
 
     <header class="hero" id="home">
-        <div class="hero-left">
-            <div class="profile-container">
-                <div class="rotating-border"></div>
-                <img src="sabbir.png" alt="Sabbir Hosen Akash" class="profile-img">
-            </div>
-            <div class="intro-texts">
+        <div class="hero-container">
+            <div class="hero-left">
+                <div class="profile-wrapper">
+                    <div class="rotating-ring"></div>
+                    <img src="sabbir.png" alt="Sabbir" class="profile-img">
+                </div>
                 <h3>Hello! I'm</h3>
                 <h1 class="name">Sabbir Hosen Akash</h1>
-                <h2>I'm a <span id="typing-text"></span></h2>
+                <h2 class="type-wrap">I'm a <span id="typing-effect"></span></h2>
             </div>
-        </div>
 
-        <div class="hero-right">
-            <p class="bio">
-                Sabbir Hosen Akash, popularly known as <strong>Writarion</strong>, is a Bangladeshi Musician, Writer, Web Developer, SEO Expert, keyboard player, and backing vocalist of the Oparok Band.
-            </p>
-            <a href="CV.png" download class="download-btn">
-                <i class="fas fa-download"></i> Download CV
-            </a>
-            <div class="social-icons">
-                <a href="https://www.facebook.com/sabbirh0senakash" target="_blank"><i class="fab fa-facebook"></i></a>
-                <a href="https://www.youtube.com/c/sabbirhosenakash" target="_blank"><i class="fab fa-youtube"></i></a>
-                <a href="https://www.instagram.com/sabbirhosenakash" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://github.com/SabbirHosenAkash" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://open.spotify.com/embed/artist/00" target="_blank"><i class="fab fa-spotify"></i></a>
+            <div class="hero-right">
+                <p class="bio">
+                    Sabbir Hosen Akash, popularly known as <strong>Writarion</strong>, is a Bangladeshi Musician, Writer, Web Developer, SEO Expert, keyboard player, and backing vocalist of the Oparok Band.
+                </p>
+                <div class="hero-actions">
+                    <a href="CV.png" download class="btn-download">Download CV</a>
+                    <div class="social-icons">
+                        <a href="https://facebook.com/sabbirh0senakash" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://youtube.com/c/sabbirhosenakash" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="https://instagram.com/sabbirhosenakash" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://github.com/SabbirHosenAkash" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://open.spotify.com/home" target="_blank"><i class="fab fa-spotify"></i></a>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
 
-    <section class="about-section">
-        <img src="about.png" alt="About Me" class="about-image reveal">
-    </section>
-
-    <section id="services" class="reveal">
-        <h2 class="section-title">My <span>Services</span></h2>
-        <div class="grid-container">
-            <div class="glass-card">
-                <i class="fas fa-search-dollar"></i>
-                <h3>SEO Optimization</h3>
-                <p>Expert in ranking websites on the first page of Google with organic strategies.</p>
-            </div>
-            <div class="glass-card">
-                <i class="fas fa-code"></i>
-                <h3>Web Development</h3>
-                <p>Creating modern, responsive, and high-speed websites using the latest technologies.</p>
-            </div>
-            <div class="glass-card">
-                <i class="fas fa-music"></i>
-                <h3>Music Production</h3>
-                <p>Professional music composition and licensing for global distribution.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="skills" class="reveal">
-        <h2 class="section-title">My <span>Skills</span></h2>
-        <div class="skills-wrapper">
-            <div class="skill-box">
-                <div class="skill-info"><span>SEO</span><span>95%</span></div>
-                <div class="skill-bar"><div class="fill" style="width: 95%"></div></div>
-            </div>
-            <div class="skill-box">
-                <div class="skill-info"><span>Web Development</span><span>90%</span></div>
-                <div class="skill-bar"><div class="fill" style="width: 90%"></div></div>
-            </div>
-            <div class="skill-box">
-                <div class="skill-info"><span>Python</span><span>85%</span></div>
-                <div class="skill-bar"><div class="fill" style="width: 85%"></div></div>
-            </div>
-            <div class="skill-box">
-                <div class="skill-info"><span>Music Production</span><span>80%</span></div>
-                <div class="skill-bar"><div class="fill" style="width: 80%"></div></div>
-            </div>
-        </div>
-    </section>
-
-    <section id="music" class="reveal">
-        <h2 class="section-title">Listen <span>Music</span></h2>
-        <div class="spotify-embed">
-            <iframe src="https://open.spotify.com/embed/artist/3S7r6X98Nl9v7Tf1L3ZqO1" width="100%" height="380" frameBorder="0" allow="encrypted-media"></iframe>
-        </div>
-    </section>
-
-    <section id="books" class="reveal">
-        <h2 class="section-title">My <span>Books</span></h2>
-        <div class="books-grid">
-            <div class="book-card">
-                <img src="book1.png" alt="Whispers of the Heart">
-                <h3>Whispers of the Heart</h3>
-                <a href="https://books.google.com.sa/books?id=lyE2EQAAQBAJ" target="_blank" class="book-btn">Read More</a>
-            </div>
-            <div class="book-card">
-                <img src="book2.png" alt="On the Edge of a Broken Bridge">
-                <h3>On the Edge of a Broken Bridge</h3>
-                <p>Published: May 12, 2025</p>
-                <a href="https://books.google.com.sa/books?id=NphdEQAAQBAJ" target="_blank" class="book-btn">Read More</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="education" class="reveal">
-        <h2 class="section-title">My <span>Education</span></h2>
-        <div class="grid-container">
-            <div class="glass-card">
-                <h3>HSC (2024)</h3>
-                <p>Government Hazi A. B. College</p>
-                <a href="https://www.ghabc.gov.bd/" target="_blank">View College</a>
-            </div>
-            <div class="glass-card">
-                <h3>SSC (2022)</h3>
-                <p>South Sandwip ML High School</p>
-                <a href="https://www.sohopathi.com/south-sandwip-ml-high-school/" target="_blank">View School</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="organisation" class="reveal">
-        <h2 class="section-title">My <span>Organizations</span></h2>
-        <div class="grid-container">
-            <div class="glass-card">
-                <h3>Oparok Band</h3>
-                <p>Keyboardist & Backing Vocalist</p>
-                <a href="https://www.facebook.com/oparok1" target="_blank" class="book-btn">Visit Page</a>
-            </div>
-            <div class="glass-card">
-                <h3>Shopping City</h3>
-                <p>Chief Exclusive Officer</p>
-                <a href="https://www.facebook.com/ShoppingCityOfficial" target="_blank" class="book-btn">Visit Page</a>
-            </div>
-            <div class="glass-card">
-                <h3>Writarion</h3>
-                <p>Open Source & Personal Projects</p>
-                <a href="https://writarion.github.io/" target="_blank" class="book-btn">Visit Site</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="reveal">
-        <h2 class="section-title">Message <span>Me</span></h2>
-        <div class="contact-wrapper">
-            <form id="contact-form" action="https://formsubmit.co/info.sabbirhosenakash@gmail.com" method="POST">
-                <input type="text" name="name" placeholder="Full Name" required>
-                <input type="email" name="email" placeholder="Email Address" required>
-                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-                <button type="submit" class="send-btn">Send Message</button>
-            </form>
-            <div class="contact-info">
-                <p><i class="fab fa-whatsapp"></i> +8801620302210</p>
-                <p><i class="fas fa-envelope"></i> info.sabbirhosenakash@gmail.com</p>
-                <p><i class="fas fa-map-marker-alt"></i> Sandwip, Chittagong, Bangladesh</p>
-            </div>
-        </div>
-    </section>
-
-    <div id="ai-chat-container">
-        <div id="chat-box" class="chat-hidden">
-            <div class="chat-header">Writarion AI</div>
-            <div id="chat-messages"></div>
-            <div class="chat-footer">
-                <input type="text" id="chat-input" placeholder="Ask me anything...">
-                <button onclick="sendChat()">Send</button>
-            </div>
-        </div>
-        <div id="ai-btn" onclick="toggleChat()">🤖</div>
+    <div class="image-divider">
+        <img src="about.png" alt="Sabbir Akash" class="about-pic reveal">
     </div>
 
+    <section id="services">
+        <h2 class="section-title">My <span>Services</span></h2>
+        <div class="grid-layout">
+            <div class="interactive-box" onclick="highlightBox(this)">
+                <i class="fas fa-search"></i>
+                <h3>SEO</h3>
+                <p>Professional Search Engine Optimization for business growth.</p>
+            </div>
+            <div class="interactive-box" onclick="highlightBox(this)">
+                <i class="fas fa-code"></i>
+                <h3>Web Dev</h3>
+                <p>Modern and responsive website design and development.</p>
+            </div>
+            <div class="interactive-box" onclick="highlightBox(this)">
+                <i class="fas fa-music"></i>
+                <h3>Music</h3>
+                <p>Music production, composition, and distribution.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2 class="section-title">My <span>Skills</span></h2>
+        <div class="skills-container">
+            <div class="skill-item">
+                <div class="skill-info"><span>SEO</span><span>95%</span></div>
+                <div class="bar"><div class="fill" style="width: 95%;"></div></div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-info"><span>Web Development</span><span>90%</span></div>
+                <div class="bar"><div class="fill" style="width: 90%;"></div></div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-info"><span>Python</span><span>85%</span></div>
+                <div class="bar"><div class="fill" style="width: 85%;"></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="music">
+        <h2 class="section-title">Listen <span>Music</span></h2>
+        <div class="spotify-container">
+            <iframe src="https://open.spotify.com/embed/artist/3S7r6X98Nl9v7Tf1L3ZqO10" width="100%" height="380" frameBorder="0" allow="encrypted-media"></iframe>
+        </div>
+    </section>
+
+    <section id="books">
+        <h2 class="section-title">My <span>Books</span></h2>
+        <div class="grid-layout">
+            <div class="book-card interactive-box" onclick="highlightBox(this)">
+                <img src="book1.png" alt="Whispers of the Heart">
+                <h3>Whispers of the Heart</h3>
+                <a href="https://books.google.com.sa/books?id=lyE2EQAAQBAJ" target="_blank" class="book-link">Read Book</a>
+            </div>
+            <div class="book-card interactive-box" onclick="highlightBox(this)">
+                <img src="book2.png" alt="On the Edge">
+                <h3>On the Edge of a Broken Bridge</h3>
+                <a href="https://books.google.com.sa/books?id=NphdEQAAQBAJ" target="_blank" class="book-link">Read Book</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <h2 class="section-title">My <span>Education</span></h2>
+        <div class="grid-layout">
+            <div class="interactive-box" onclick="highlightBox(this)">
+                <h3>HSC (2024)</h3>
+                <p>Govt Hazi A. B. College</p>
+                <a href="https://www.ghabc.gov.bd/" target="_blank">View Site</a>
+            </div>
+            <div class="interactive-box" onclick="highlightBox(this)">
+                <h3>SSC (2022)</h3>
+                <p>South Sandwip ML High School</p>
+                <a href="https://www.sohopathi.com/south-sandwip-ml-high-school/" target="_blank">View Site</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="organisations">
+        <h2 class="section-title">My <span>Organisations</span></h2>
+        <div class="grid-layout">
+            <div class="interactive-box" onclick="highlightBox(this)">
+                <h3>Oparok Band</h3>
+                <p>Keyboardist</p>
+                <a href="https://facebook.com/oparok1" target="_blank">Visit Page</a>
+            </div>
+            <div class="interactive-box" onclick="highlightBox(this)">
+                <h3>Shopping City</h3>
+                <p>Chief Exclusive Officer</p>
+                <a href="https://facebook.com/ShoppingCityOfficial" target="_blank">Visit Page</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="section-title">Message <span>Me</span></h2>
+        <div class="contact-card">
+            <form action="https://formsubmit.co/info.sabbirhosenakash@gmail.com" method="POST">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Full Name" required>
+                    <input type="email" name="email" placeholder="Email Address" required>
+                </div>
+                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit" class="send-btn">Send Message</button>
+            </form>
+            <div class="contact-details">
+                <p><i class="fab fa-whatsapp"></i> +8801620302210</p>
+                <p><i class="fas fa-envelope"></i> info.sabbirhosenakash@gmail.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> Sandwip, Chittagong</p>
+            </div>
+        </div>
+    </section>
+
     <footer>
-        <p>&copy; 2026 Sabbir Hosen Akash. All rights reserved.</p>
+        <p>© 2026 Sabbir Hosen Akash. All rights reserved.</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="script.js"></script>
 </body>
-                                                                                 </html>
+    </html>
