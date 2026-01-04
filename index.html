@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sabbir Hosen Akash - Writarion Portfolio</title>
+    <title>Sabbir Hosen Akash - Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -11,133 +11,107 @@
 
     <div id="particles-js"></div>
 
-    <div class="menu-btn" onclick="toggleMenu()">☰</div>
-    
-    <nav class="navbar" id="navbar">
-        <ul>
+    <nav class="navbar">
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <ul id="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#music">Music</a></li>
             <li><a href="#books">Books</a></li>
-            <li><a href="#education">Education</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
-    <header class="hero-section" id="home">
-        <div class="hero-left">
-            <div class="profile-image-container">
-                <img src="sabbir.png" alt="Sabbir Hosen Akash" class="main-profile">
+    <header class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-left">
+                <div class="profile-wrapper">
+                    <div class="rotating-ring"></div>
+                    <img src="sabbir.png" alt="Sabbir" class="profile-img">
+                </div>
+                <h3>Hello, I'm</h3>
+                <h1 class="glitch-text">Sabbir Hosen Akash</h1>
+                <h2 class="typing-container">I'm a <span id="typed"></span></h2>
             </div>
-            <h3>Hello! I'm</h3>
-            <h1 class="name-text">Sabbir Hosen Akash</h1>
-            <h2>I'm a <span id="typing-effect"></span></h2>
-        </div>
-        
-        <div class="hero-right">
-            <p class="bio-text">
-                Sabbir Hosen Akash, popularly known as <strong>Writarion</strong>, is a Bangladeshi Musician, Writer, Web Developer, SEO Expert, keyboard player, and backing vocalist of the Oparok Band.
-            </p>
-            <a href="CV.png" download class="download-btn">Download</a>
-            <div class="social-icons">
-                <a href="https://facebook.com/sabbirh0senakash" target="_blank"><i class="fab fa-facebook"></i></a>
-                <a href="https://youtube.com/c/sabbirhosenakash" target="_blank"><i class="fab fa-youtube"></i></a>
-                <a href="https://instagram.com/sabbirhosenakash" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://github.com/SabbirHosenAkash" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://open.spotify.com/embed/artist/00" target="_blank"><i class="fab fa-spotify"></i></a>
+
+            <div class="hero-right">
+                <p class="bio">Sabbir Hosen Akash, known as <strong>Writarion</strong>, is a Bangladeshi Musician, Writer, Web Developer, and SEO Expert. Founder of Ethereal Wave Sabbir and Keyboardist of Oparok Band.</p>
+                <div class="hero-btns">
+                    <a href="CV.png" download class="btn">Download CV</a>
+                </div>
+                <div class="social-icons">
+                    <a href="https://facebook.com/sabbirh0senakash" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://youtube.com/SabbirHosenAkash" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://instagram.com/sabbirhosenakash" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://github.com/SabbirHosenAkash" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://open.spotify.com/artist/sabbir" target="_blank"><i class="fab fa-spotify"></i></a>
+                </div>
             </div>
         </div>
     </header>
 
-    <section class="about-pic-section">
-        <img src="about.png" alt="About Me" class="about-image">
-    </section>
-
-    <section id="services" class="animate-on-scroll">
-        <h2 class="section-title">My <span>Services</span></h2>
-        <div class="services-grid">
-            <div class="service-box"><h3>SEO Optimization</h3><p>Ranking your digital presence on top.</p></div>
-            <div class="service-box"><h3>Web Development</h3><p>Modern and responsive web designs.</p></div>
-            <div class="service-box"><h3>Music License</h3><p>Protecting and distributing your music.</p></div>
-            <div class="service-box"><h3>Photography</h3><p>Capturing moments beautifully.</p></div>
-        </div>
-    </section>
-
-    <section id="skills" class="animate-on-scroll">
-        <h2 class="section-title">My <span>Skills</span></h2>
-        <div class="skills-container">
-            <div class="skill-item"><span>SEO</span><div class="bar"><span style="width: 95%"></span></div></div>
-            <div class="skill-item"><span>Web Development</span><div class="bar"><span style="width: 90%"></span></div></div>
-            <div class="skill-item"><span>Python</span><div class="bar"><span style="width: 85%"></span></div></div>
-            <div class="skill-item"><span>Music Production</span><div class="bar"><span style="width: 80%"></span></div></div>
-        </div>
-    </section>
-
-    <section id="music" class="animate-on-scroll">
-        <h2 class="section-title">Listen <span>Music</span></h2>
-        <div class="spotify-container">
-            <iframe src="https://open.spotify.com/embed/artist/3S7r6X98Nl9v7Tf1L3ZqO1" width="100%" height="380" frameBorder="0" allow="encrypted-media"></iframe>
-        </div>
-    </section>
-
-    <section id="books" class="animate-on-scroll">
-        <h2 class="section-title">My <span>Books</span></h2>
-        <div class="books-grid">
-            <div class="book-box">
-                <img src="book1.png" alt="Book 1">
-                <h3>Whispers of the Heart</h3>
-                <a href="https://books.google.com.sa/books?id=lyE2EQAAQBAJ" target="_blank" class="book-btn">Read More</a>
-            </div>
-            <div class="book-box">
-                <img src="book2.png" alt="Book 2">
-                <h3>On the Edge of a Broken Bridge</h3>
-                <a href="https://books.google.com.sa/books?id=NphdEQAAQBAJ" target="_blank" class="book-btn">Read More</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="orgs" class="animate-on-scroll">
-        <h2 class="section-title">My <span>Organizations</span></h2>
-        <div class="org-container">
-            <div class="org-box"><h3>Oparok Band</h3><a href="https://www.facebook.com/oparok1" class="visit-btn">Visit</a></div>
-            <div class="org-box"><h3>Shopping City</h3><a href="https://www.facebook.com/ShoppingCityOfficial" class="visit-btn">Visit</a></div>
-            <div class="org-box"><h3>Writarion</h3><a href="https://writarion.github.io/" class="visit-btn">Visit</a></div>
-        </div>
-    </section>
-
-    <section id="contact" class="animate-on-scroll">
-        <h2 class="section-title">Message <span>Me</span></h2>
-        <div class="contact-wrapper">
-            <form id="contact-form" action="https://formsubmit.co/info.sabbirhosenakash@gmail.com" method="POST">
-                <input type="text" name="name" placeholder="Full Name" required>
-                <input type="email" name="email" placeholder="Email Address" required>
-                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-                <button type="submit" class="send-btn">Send Message</button>
-            </form>
-            <div class="contact-details">
-                <p><i class="fab fa-whatsapp"></i> +8801620302210</p>
-                <p><i class="fas fa-envelope"></i> info.sabbirhosenakash@gmail.com</p>
-                <p><i class="fas fa-map-marker-alt"></i> Sandwip, Chittagong, Bangladesh</p>
-            </div>
-        </div>
-    </section>
-
-    <div id="ai-chat-wrapper">
-        <div id="chat-window" class="chat-hidden">
-            <div class="chat-header">Writarion AI Assistant</div>
-            <div id="chat-logs"></div>
-            <div class="chat-input-area">
-                <input type="text" id="user-input" placeholder="Ask me anything...">
-                <button onclick="sendMessage()">Send</button>
-            </div>
-        </div>
-        <div id="chat-trigger"><i class="fas fa-robot"></i></div>
+    <div class="center-img-box">
+        <img src="about.png" alt="About Sabbir" class="about-img">
     </div>
 
-    <footer>
-        <p>© 2026 Sabbir Hosen Akash. All rights reserved.</p>
-    </footer>
+    <section id="services" class="reveal">
+        <h2 class="title">My <span>Services</span></h2>
+        <div class="grid">
+            <div class="card"><h3>SEO</h3><p>Search Engine Optimization expert.</p></div>
+            <div class="card"><h3>Web Design</h3><p>Modern responsive websites.</p></div>
+            <div class="card"><h3>Music</h3><p>Professional Music Production.</p></div>
+        </div>
+    </section>
+
+    <section id="music" class="reveal">
+        <h2 class="title">Listen <span>Music</span></h2>
+        <div class="spotify-wrapper">
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/3Wp07kAn56Y05XyI6T2j0T?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+    </section>
+
+    <section id="books" class="reveal">
+        <h2 class="title">My <span>Books</span></h2>
+        <div class="grid">
+            <div class="book-card">
+                <img src="book1.png" alt="Book 1">
+                <a href="https://books.google.com.sa/books?id=lyE2EQAAQBAJ" target="_blank" class="btn">Read More</a>
+            </div>
+            <div class="book-card">
+                <img src="book2.png" alt="Book 2">
+                <a href="https://books.google.com.sa/books?id=NphdEQAAQBAJ" target="_blank" class="btn">Read More</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="reveal">
+        <h2 class="title">Message <span>Me</span></h2>
+        <div class="contact-container">
+            <form action="https://formsubmit.co/info.sabbirhosenakash@gmail.com" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Message" required></textarea>
+                <button type="submit" class="btn">Send</button>
+            </form>
+            <div class="details">
+                <p>WhatsApp: +8801620302210</p>
+                <p>Email: info.sabbirhosenakash@gmail.com</p>
+            </div>
+        </div>
+    </section>
+
+    <div id="chat-container">
+        <div id="chat-window" class="hide">
+            <div class="chat-header">Writarion AI Assistant</div>
+            <div id="chat-body"></div>
+            <div class="chat-footer">
+                <input type="text" id="chat-input" placeholder="Type anything...">
+                <button onclick="sendChat()">➤</button>
+            </div>
+        </div>
+        <div id="chat-bubble" onclick="toggleChat()">🤖</div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="script.js"></script>
